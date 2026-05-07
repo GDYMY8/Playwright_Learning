@@ -1,5 +1,5 @@
 export const herokuppUser = {
   username: 'tomsmith',
-  password: 'SuperSecretPassword',
+  password: 'SuperSecretPassword!',
   role: 'authoriserUser',
 };
