@@ -7,7 +7,7 @@ test('Upload without selecting a file shows no success message', async ({ page }
   await page.click('#file-submit');
 
   // Assert we are NOT on success page
-  await expect(page.locator('h3')).not.toHaveText('File Uploaded!');
+  await expect(page.locator('h1')).toHaveText('Internal Server Error');
 
   // Assert we are still on upload page
   await expect(page).toHaveURL(/\/upload/);
