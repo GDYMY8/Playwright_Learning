@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { herokuppUser } from '../data/herokuppuser';
+import { herokuppuser } from '../data/herokuppuser';
 
 test('User can log in with valid credentials', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/login');
