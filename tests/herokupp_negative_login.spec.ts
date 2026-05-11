@@ -8,5 +8,6 @@ test('Invalid login shows error message', async ({ page }) => {
   await page.getByLabel('Password').fill(herokuppUser.password);
   await page.getByRole('button', { name: 'Login' }).click();
 
+  await expect(page).toHaveURL(/login/);
   await expect(page.getByText('Your username is invalid!')).toBeVisible();
 });
