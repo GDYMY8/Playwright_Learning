@@ -9,6 +9,6 @@ test('Login fails with invalid password', async ({ page }) => {
   await page.getByRole('button', { name: 'Login' }).click();
 
   await expect(page).toHaveURL(/login/);
-  await expect(page.getByText('Your password is invalid')).toBeVisible();
+  await expect(page.getByText('Your password is invalid!')).toBeVisible();
 
 });
