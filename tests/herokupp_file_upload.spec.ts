@@ -1,15 +1,20 @@
 import { test, expect } from '@playwright/test';
-import { herokuppUser } from '../data/herokuppuser';
+import path from 'path';
 
-test('Login fails when username contains leading or trailing spaces', async ({ page }) => {
-  await page.goto('/login');
+test('File upload works successfully', async ({ page }) => {
+  // Navigate using baseURL
+  await page.goto('/upload');
 
-  await page
-    .getByLabel('Username')
-    .fill(`  ${herokuppUser.username}  `);
-  await page.getByLabel('Password').fill(herokuppUser.password);
-  await page.getByRole('button', { name: 'Login' }).click();
+  // Resolve file path
+  const filePath = path.resolve(__dirname, '../../data/sample.txt');
 
-  await expect(page).toHaveURL(/login/);
-  await expect(page.getByText('Your username is invalid')).toBeVisible();
+  // Upload the file
+  await page.setInputFiles('#file-upload', filePath);
+
+  // Click upload button
+  await page.click('#file-submit');
+
+  // Assertions
+  await expect(page.locator('h3')).toHaveText('File Uploaded!');
+  await expect(page.locator('#uploaded-files')).toHaveText('sample.txt');
 });
