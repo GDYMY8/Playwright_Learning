@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { herokuppUser } from '../data/herokuppuser';
+import { herokuppuser } from '../data/herokuppuser';
 
 test('Login fails when username contains leading or trailing spaces', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/login');
