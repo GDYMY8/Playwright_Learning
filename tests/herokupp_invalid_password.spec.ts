@@ -1,10 +1,11 @@
 import { test, expect } from '@playwright/test';
 import { herokuppinvaliduser } from '../data/herokuppinvaliduser';
+import { herokuppuser } from '../data/herokuppuser';
 
 test('Login fails with invalid password', async ({ page }) => {
   await page.goto('https://the-internet.herokuapp.com/login');
 
-  await page.getByLabel('Username').fill(herokuppinvaliduser.username);
+  await page.getByLabel('Username').fill(herokuppuser.username);
   await page.getByLabel('Password').fill('WrongPassword');
   await page.getByRole('button', { name: 'Login' }).click();
 
