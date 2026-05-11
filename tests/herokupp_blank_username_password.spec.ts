@@ -1,4 +1,3 @@
-
 import { test, expect } from '@playwright/test';
 
 test('Login fails when username and password are empty', async ({ page }) => {
