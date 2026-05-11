@@ -6,5 +6,5 @@ test('Login fails when username and password are empty', async ({ page }) => {
   await page.getByRole('button', { name: 'Login' }).click();
 
   await expect(page).toHaveURL(/login/);
-  await expect(page.getByText('Your username is invalid!')).toBeVisible();
+  await expect(page.getByText('Your username is invalid', { exact: false })).toBeVisible();
 });
