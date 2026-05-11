@@ -6,7 +6,7 @@ test('File upload works successfully', async ({ page }) => {
   await page.goto('/upload');
 
   // Resolve file path
-  const filePath = path.resolve(__dirname, '../../data/sample.txt');
+  const filePath = path.resolve(__dirname, '../data/sample.txt');
 
   // Upload the file
   await page.setInputFiles('#file-upload', filePath);
