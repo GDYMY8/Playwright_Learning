@@ -1,4 +1,4 @@
-export const herokuppUser = {
+export const herokuppuser = {
   username: 'tomsmith',
   password: 'SuperSecretPassword!',
   role: 'authoriserUser',
