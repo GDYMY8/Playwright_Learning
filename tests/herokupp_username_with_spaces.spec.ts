@@ -6,8 +6,8 @@ test('Login fails when username contains leading or trailing spaces', async ({ p
 
   await page
     .getByLabel('Username')
-    .fill(`  ${herokuppUser.username}  `);
-  await page.getByLabel('Password').fill(herokuppUser.password);
+    .fill(`  ${herokuppuser.username}  `);
+  await page.getByLabel('Password').fill(herokuppuser.password);
   await page.getByRole('button', { name: 'Login' }).click();
 
   await expect(page).toHaveURL(/login/);
