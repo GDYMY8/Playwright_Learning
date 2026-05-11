@@ -4,7 +4,7 @@ import { herokuppinvaliduser } from '../data/herokuppinvaliduser';
 test('Login fails with invalid password', async ({ page }) => {
   await page.goto('/login');
 
-  await page.getByLabel('Username').fill(herokuppUser.username);
+  await page.getByLabel('Username').fill(herokuppinvaliduser.username);
   await page.getByLabel('Password').fill('WrongPassword');
   await page.getByRole('button', { name: 'Login' }).click();
 
